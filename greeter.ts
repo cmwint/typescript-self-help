@@ -18,12 +18,15 @@ class Student {
 
 
 // interfaces describes object's structure
+// used to type-check whether an object fits a certain structure
+// their purpose is only for the development stage
 interface Person {
     firstName: string;
     lastName: string;
 }
 
 // type annotation ': string'
+// static typing
 // errors on comilation if input is not a string
 function greeter(person: Person) {
     return "hello, " + person.firstName + " " + person.lastName;
