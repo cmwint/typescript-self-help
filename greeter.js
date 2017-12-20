@@ -15,7 +15,7 @@ var Student = /** @class */ (function () {
 // type annotation ': string'
 // errors on comilation if input is not a string
 function greeter(person) {
-    return "hello," + person.firstName + " " + person.lastName;
+    return "hello, " + person.firstName + " " + person.lastName;
 }
 // let user = {
 //     firstName: "Jane",
