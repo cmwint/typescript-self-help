@@ -1,9 +1,20 @@
+// TypeScript compiler:
+// tsc greeter.ts
 
-// type annotation
-function greeter(person: string) {
-    return "hello," + person;
+interface Person {
+    firstName: string;
+    lastName: string;
 }
 
-let user;
+// type annotation ': string'
+// errors on comilation if input is not a string
+function greeter(person: Person) {
+    return "hello," + person.firstName + " " + person.lastName;
+}
+
+let user = {
+    firstName: "Jane",
+    lastName: "User"
+};
 
 document.body.innerHTML = greeter(user);
