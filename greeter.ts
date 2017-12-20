@@ -1,6 +1,7 @@
 // TypeScript compiler:
 // tsc greeter.ts
 
+// interfaces describes object's structure
 interface Person {
     firstName: string;
     lastName: string;
