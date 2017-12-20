@@ -1,7 +1,9 @@
+
+// type annotation
 function greeter(person: string) {
     return "hello," + person;
 }
 
-let user = "Jane User";
+let user;
 
 document.body.innerHTML = greeter(user);
