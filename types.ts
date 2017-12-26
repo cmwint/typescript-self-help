@@ -40,6 +40,8 @@ function returnConsole() : void {
     console.log('A message here');
 }
 
+
+
 /**
  * Interfaces
  */
@@ -66,3 +68,20 @@ printName({name:"Edward"});
 
 
 // interfaces = a blue print for the kind of object we want to accept
+
+
+
+
+/**
+ * Classes
+ */
+// make up the blue print of an object, similar to interfaces, but much more powerful
+
+// compiling this will create a function in our js file
+// haven't yet added anything to it that would would effect the js in runtime, so like, we just have a declaration of what the type of 'name' should be
+class SkyWalker {
+    name: string;   
+}
+
+// we can now define an object as a SkyWalker
+var luke = new SkyWalker();
