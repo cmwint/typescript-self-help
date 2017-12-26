@@ -76,12 +76,35 @@ printName({name:"Edward"});
  * Classes
  */
 // make up the blue print of an object, similar to interfaces, but much more powerful
+// it defines the BEHAVIOR of an object
 
 // compiling this will create a function in our js file
 // haven't yet added anything to it that would would effect the js in runtime, so like, we just have a declaration of what the type of 'name' should be
+
+// properties in a class can not be optional
 class SkyWalker {
-    name: string;   
+    name: string;
+    // gives it a default property
+    saying: string = "Hello";
+    // static properties can be accessed in the class
+    static mantra = "The jedi needs to die";
+
+    // classes can also have constructor properties, which is a fucntion when the class runs
+    constructor() {
+        // gives it a default property
+        this.saying = SkyWalker.mantra;
+    }
+
+    // methods
+    hello(person: string) {
+        console.log("hello, " + person);
+    }
 }
 
 // we can now define an object as a SkyWalker
 var luke = new SkyWalker();
+luke.saying = "The force is strong with this one";
+
+console.log(SkyWalker.mantra);
+
+luke.hello('Han');
