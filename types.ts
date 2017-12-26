@@ -39,3 +39,9 @@ function getName() : string {
 function returnConsole() : void {
     console.log('A message here');
 }
+
+
+/// an interface is a definition for an object that tells typescript what that object is going to be
+function printName(stark) : void {
+    console.log(stark.name);
+}
