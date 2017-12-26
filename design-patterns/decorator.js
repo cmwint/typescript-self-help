@@ -65,7 +65,7 @@ var EnhancedAutoPilot = /** @class */ (function (_super) {
     }
     EnhancedAutoPilot.prototype.getDescription = function () {
         // return the description of the car that we decorate, plus description of option
-        return this.decoratedCar.getDescription() + ', Enhanced AUto Pilot';
+        return this.decoratedCar.getDescription() + ', Enhanced Auto Pilot';
     };
     EnhancedAutoPilot.prototype.cost = function () {
         // cost = cost of decorated car, plus cost of option
@@ -73,3 +73,25 @@ var EnhancedAutoPilot = /** @class */ (function (_super) {
     };
     return EnhancedAutoPilot;
 }(CarOptions));
+var RearFacingSeats = /** @class */ (function (_super) {
+    __extends(RearFacingSeats, _super);
+    function RearFacingSeats(car) {
+        var _this = _super.call(this) || this;
+        _this.decoratedCar = car;
+        return _this;
+    }
+    RearFacingSeats.prototype.getDescription = function () {
+        return this.decoratedCar.getDescription() + ', Rear Facing Seats';
+    };
+    RearFacingSeats.prototype.cost = function () {
+        return this.decoratedCar.cost() + 4000;
+    };
+    return RearFacingSeats;
+}(CarOptions));
+// now use the decorator pattern
+var myTesla = new ModelS();
+// pass along the "myTesla" so the rear facing seats can decorate the car
+myTesla = new RearFacingSeats(myTesla);
+myTesla = new EnhancedAutoPilot(myTesla);
+console.log(myTesla.cost());
+console.log(myTesla.getDescription());

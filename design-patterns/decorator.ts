@@ -58,10 +58,37 @@ class EnhancedAutoPilot extends CarOptions {
 
     public getDescription(): string {
         // return the description of the car that we decorate, plus description of option
-        return this.decoratedCar.getDescription() + ', Enhanced AUto Pilot';
+        return this.decoratedCar.getDescription() + ', Enhanced Auto Pilot';
     }
     public cost(): number {
         // cost = cost of decorated car, plus cost of option
         return this.decoratedCar.cost() + 5000;
     }
 }
+
+
+class RearFacingSeats extends CarOptions {
+    decoratedCar: Car;
+
+    constructor (car: Car) {
+        super();
+        this.decoratedCar = car;
+    }
+
+    public getDescription(): string {
+        return this.decoratedCar.getDescription() + ', Rear Facing Seats';
+    }
+    public cost(): number {
+        return this.decoratedCar.cost() + 4000;
+    }
+}
+
+
+// now use the decorator pattern
+let myTesla = new ModelS();
+// pass along the "myTesla" so the rear facing seats can decorate the car
+myTesla = new RearFacingSeats(myTesla);
+myTesla = new EnhancedAutoPilot(myTesla);
+
+console.log(myTesla.cost());
+console.log(myTesla.getDescription());
