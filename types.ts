@@ -108,3 +108,41 @@ luke.saying = "The force is strong with this one";
 console.log(SkyWalker.mantra);
 
 luke.hello('Han');
+
+
+
+/**
+ * Inheritance
+ */
+// a way for objects or classes to gain access to the properties of classes that are possessed by other objects.
+// horse and snake example, both extending Animal class
+
+class Person {
+    name: string;
+
+    constructor (name: string) {
+        // "this" refers to the object that will be created
+        this.name = name;
+    }
+    // methods
+    dance() {
+        console.log(this.name + " is dancing");
+    }
+}
+
+var jessica = new Person('Jessica');
+jessica.dance();
+
+// "extends" means, this class will automatically start will all the properties that this class extends
+class AwesomePerson extends Person {
+    dance() {
+        // when you override a function, it doesn't automatically call the original function it overrode
+        // you have to use this to override it
+        super.dance();
+        
+        console.log("cooler dance");
+    }
+}
+
+var schmidt = new AwesomePerson("Schmidt");
+schmidt.dance();

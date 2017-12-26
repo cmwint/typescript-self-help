@@ -1,3 +1,13 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // define a type with a colon
 // types are important during compile time, not with JS is runnning
 // to check for errors
@@ -75,3 +85,37 @@ var luke = new SkyWalker();
 luke.saying = "The force is strong with this one";
 console.log(SkyWalker.mantra);
 luke.hello('Han');
+/**
+ * Inheritance
+ */
+// a way for objects or classes to gain access to the properties of classes that are possessed by other objects.
+// horse and snake example, both extending Animal class
+var Person = /** @class */ (function () {
+    function Person(name) {
+        // "this" refers to the object that will be created
+        this.name = name;
+    }
+    // methods
+    Person.prototype.dance = function () {
+        console.log(this.name + " is dancing");
+    };
+    return Person;
+}());
+var jessica = new Person('Jessica');
+jessica.dance();
+// "extends" means, this class will automatically start will all the properties that this class extends
+var AwesomePerson = /** @class */ (function (_super) {
+    __extends(AwesomePerson, _super);
+    function AwesomePerson() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    AwesomePerson.prototype.dance = function () {
+        // when you override a function, it doesn't automatically call the original function it overrode
+        // you have to use this to override it
+        _super.prototype.dance.call(this);
+        console.log("cooler dance");
+    };
+    return AwesomePerson;
+}(Person));
+var schmidt = new AwesomePerson("Schmidt");
+schmidt.dance();
