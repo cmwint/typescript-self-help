@@ -34,3 +34,15 @@ function getName() {
 function returnConsole() {
     console.log('A message here');
 }
+/// an interface is a definition for an object that tells typescript what that object is going to be
+// define the argument that's being passed in as a Stark interface, which every Stark has to have a name
+function printName(stark) {
+    console.log(stark.name);
+}
+// pass in an object that has a name property
+printName({ name: "Edward" });
+// printName({label:"John"});
+// ^^^ with this, 'tsc types.ts' in the terminal does not give you an error,
+// but when you run 'node types.js' it runs the file for you, and gives you an undefined
+// after adding the interface, the 'tsc types.js' command will give an error
+// interfaces = a blue print for the kind of object we want to accept 
