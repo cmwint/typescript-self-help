@@ -8,5 +8,5 @@ var Helper;
     }());
     Helper.Language = Language;
 })(Helper || (Helper = {}));
-console.log("oh, ", Helper.Language.Greeting);
+console.log("oh, " + Helper.Language.Greeting);
 //# sourceMappingURL=main.js.map

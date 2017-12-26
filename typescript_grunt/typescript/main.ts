@@ -1,2 +1,2 @@
 /// <reference path="helper.ts" />
-console.log("oh, " Helper.Language.Greeting);
+console.log("oh, " + Helper.Language.Greeting);
