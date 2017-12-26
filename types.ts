@@ -82,6 +82,7 @@ printName({name:"Edward"});
 // haven't yet added anything to it that would would effect the js in runtime, so like, we just have a declaration of what the type of 'name' should be
 
 // properties in a class can not be optional
+// keep class names with Uppercase letters
 class SkyWalker {
     name: string;
     // gives it a default property
@@ -139,7 +140,7 @@ class AwesomePerson extends Person {
         // when you override a function, it doesn't automatically call the original function it overrode
         // you have to use this to override it
         super.dance();
-        
+
         console.log("cooler dance");
     }
 }
