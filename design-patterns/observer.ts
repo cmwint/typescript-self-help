@@ -12,20 +12,20 @@
 interface Subject {
     // a subject needs 3 methods
     // the first
-    registerObserver(o: Observer);
+    registerObserver(o: Observer): void;
     // ^^^ allows the TempDisplay class to register itself as an observer with the weather station
     // so the weather station knows to notify the TemDisplay of any changes
 
     // to stop the weather station from notifying the temp display of any changes
-    removeObserver(o: Observer);
+    removeObserver(o: Observer): void;
 
     // so if a change happens in the subject, it should notify all of the observers
-    notifyObservers();
+    notifyObservers(): void;
 }
 
 interface Observer {
     // only one method, to pass along the temperature when updating
-    update(temperatue: number);
+    update(temperatue: number): void;
 }
 
 
