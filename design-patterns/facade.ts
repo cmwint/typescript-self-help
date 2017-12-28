@@ -91,7 +91,7 @@ class HomeTheaterFacade {
 
     // set up code is centralized in a single class, this makes facade patterns strong
     // keeps code short and to the point, and keeps you from writing code over and over again
-    // keeps code flexible for the future, too
+    // keeps code flexible for the future, too. only need to update this in one place
     public watchMovie() {
         // ask the popcorn maker to turn on and pop popcorn
         this.popcornMaker.turnOn();
