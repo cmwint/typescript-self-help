@@ -37,6 +37,29 @@ class GooglePixel implements Android {
 }
 
 // define the adapter
-class lightningToMicroUSBAdapter {
-    
+class lightningToMicroUSBAdapter implements Android {
+    // implements USB, but then internally converts it to lightning
+
+    // need a device
+    iphoneDevice: IPhone;
+
+    constructor(iphone: IPhone) {
+        this.iphoneDevice = iphone;
+    }
+
+    useMicroUSB(): void {
+        // need to map it to something the iphone understands
+        console.log('Want to use USB, converting to Lightning....');
+
+        // even though thte iphone is not compatible with USB, we can make it so with the adapter
+        // this is trasnlated to something that the iphone can understand
+        this.iphoneDevice.useLightning()
+    }
 }
+
+
+// to use
+let iphone = new iPhone7();
+let chargeAdapter = new lightningToMicroUSBAdapter(iphone);
+
+chargeAdapter.useMicroUSB();
